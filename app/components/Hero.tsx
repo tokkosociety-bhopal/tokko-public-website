@@ -4,11 +4,20 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative pt-32 pb-24 bg-gradient-to-br from-blue-50 via-white to-indigo-50 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50">
 
-      {/* Soft Background Glow */}
-      <div className="absolute top-20 right-10 w-96 h-96 bg-blue-400 opacity-20 blur-3xl rounded-full"></div>
-      <div className="absolute bottom-10 left-10 w-72 h-72 bg-indigo-400 opacity-20 blur-3xl rounded-full"></div>
+      {/* Animated Background Blobs */}
+      <motion.div
+        className="absolute top-20 left-10 w-96 h-96 bg-blue-400/30 rounded-full blur-3xl"
+        animate={{ y: [0, 40, 0] }}
+        transition={{ duration: 8, repeat: Infinity }}
+      />
+
+      <motion.div
+        className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-400/30 rounded-full blur-3xl"
+        animate={{ y: [0, -40, 0] }}
+        transition={{ duration: 10, repeat: Infinity }}
+      />
 
       <div className="relative max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
 
@@ -18,60 +27,60 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <p className="text-blue-600 font-semibold mb-4">
-            Trusted by Modern Housing Societies
+          <p className="text-blue-600 font-semibold mb-4 tracking-wide">
+            Secure • Cloud-Based • Modern
           </p>
 
-          <h1 className="text-5xl font-extrabold leading-tight mb-6">
-            All-in-One Society <br />
+          <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
+            The Future of <br />
             <span className="text-blue-600">
-              Management Software
+              Society Management
             </span>
           </h1>
 
-          <p className="text-lg text-gray-600 mb-8">
-            Manage visitors, residents, billing, security and notices —
-            all from one powerful cloud dashboard.
+          <p className="text-lg text-gray-600 mb-8 max-w-lg">
+            Digitize visitor entry, resident management and security
+            operations with one powerful dashboard.
           </p>
 
           <div className="flex gap-4">
             <a
               href="/enquiry"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-2xl shadow-lg transition duration-300"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-2xl shadow-xl transition transform hover:-translate-y-1"
             >
               Register Your Society
             </a>
 
             <a
               href="https://admin.tokkosociety.com"
-              className="border border-gray-300 px-6 py-3 rounded-2xl hover:bg-gray-100 transition duration-300"
+              className="border border-gray-300 px-6 py-3 rounded-2xl hover:bg-gray-100 transition"
             >
               Admin Login
             </a>
           </div>
         </motion.div>
 
-        {/* RIGHT DASHBOARD MOCKUP */}
+        {/* RIGHT DASHBOARD */}
         <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
           className="relative"
         >
 
-          {/* Laptop Frame Effect */}
-          <div className="bg-white rounded-3xl shadow-2xl p-4 border border-gray-100 overflow-hidden hover:scale-105 transform transition duration-700">
+          {/* Glass Card */}
+          <div className="bg-white/70 backdrop-blur-xl rounded-3xl shadow-2xl p-5 border border-white/30">
 
             <img
-              src="/admin-dashboard.png"
-              alt="Tokko Society Admin Dashboard"
+              src="/admin-dashboard.webp"
+              alt="Tokko Society Dashboard"
               className="rounded-2xl w-full object-cover"
             />
 
           </div>
 
-          {/* Subtle Floating Shadow */}
-          <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-3/4 h-10 bg-black opacity-10 blur-2xl rounded-full"></div>
+          {/* Floating Shadow */}
+          <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-3/4 h-12 bg-black/10 blur-2xl rounded-full"></div>
 
         </motion.div>
 
