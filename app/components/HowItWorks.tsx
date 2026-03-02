@@ -17,7 +17,7 @@ export default function HowItWorks() {
             {
               step: "01",
               title: "Register Your Society",
-              desc: "Create your society account and set up your admin dashboard within minutes."
+              desc: "Send Enquiry For Your Society Registration and you'll be contacted within 24 hours."
             },
             {
               step: "02",
@@ -28,6 +28,11 @@ export default function HowItWorks() {
               step: "03",
               title: "Manage Visitors Digitally",
               desc: "Approve visitors, track entries, and maintain digital logs seamlessly."
+            },
+            {
+              step: "04",
+              title: "Manage Society staff",
+              desc: "Assign roles and manage staff members with secure access control."
             }
           ].map((item, index) => (
             <motion.div
