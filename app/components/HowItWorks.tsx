@@ -22,7 +22,7 @@ export default function HowItWorks() {
             {
               step: "02",
               title: "Add Residents & Guards",
-              desc: "Easily onboard residents and assign guards with secure role-based access."
+              desc: "Easily onboard residents and assign guards with secure role-based access if complex for you our team will help you set it up."
             },
             {
               step: "03",
@@ -34,6 +34,7 @@ export default function HowItWorks() {
               title: "Manage Society staff",
               desc: "Assign roles and manage staff members with secure access control."
             }
+            
           ].map((item, index) => (
             <motion.div
               key={index}
