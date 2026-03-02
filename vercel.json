@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/admin",
+      "destination": "https://tokko-society-admin-panel.vercel.app"
+    },
+    {
+      "source": "/super",
+      "destination": "https://tokko-super-admin-panel.vercel.app"
+    }
+  ]
+}
