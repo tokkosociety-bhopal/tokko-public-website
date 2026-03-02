@@ -34,11 +34,13 @@ export default function ProblemSolution() {
             </ul>
           </div>
 
-          <div className="bg-white rounded-3xl shadow-xl p-8 border border-gray-100">
-            <div className="h-64 bg-red-100 rounded-2xl flex items-center justify-center text-red-600 font-semibold">
-              Manual System Illustration
-            </div>
-          </div>
+          <div className="bg-white rounded-3xl shadow-2xl p-4 border border-gray-100 overflow-hidden">
+  <img
+    src="/manual-system.png"
+    alt="Manual Society Management"
+    className="rounded-2xl w-full h-80 object-cover"
+  />
+</div>
         </motion.div>
 
         {/* SOLUTION SECTION */}
