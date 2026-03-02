@@ -1,84 +1,93 @@
 "use client";
 
 import { useState } from "react";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { db } from "@/lib/firebase";
 
-export default function Enquiry() {
+export default function EnquiryPage() {
+  const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  return (
-    <main className="pt-32 pb-24 bg-gray-50 min-h-screen">
-      <div className="max-w-4xl mx-auto px-6">
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+    setLoading(true);
 
-        <h1 className="text-4xl font-bold mb-8 text-center">
-          Start New Society Enquiry
+    const formData = new FormData(e.target);
+
+    try {
+      await addDoc(collection(db, "inquiries"), {
+        societyName: formData.get("societyName"),
+        name: formData.get("name"),
+        phone: formData.get("phone"),
+        city: formData.get("city"),
+        status: "new",
+        createdAt: serverTimestamp(),
+      });
+
+      setSubmitted(true);
+      e.target.reset();
+    } catch (error) {
+      console.error("Error submitting enquiry:", error);
+      alert("Something went wrong.");
+    }
+
+    setLoading(false);
+  };
+
+  return (
+    <section className="min-h-screen flex items-center justify-center bg-gray-50 px-6 py-20">
+      <div className="max-w-xl w-full bg-white shadow-2xl rounded-3xl p-10 border">
+
+        <h1 className="text-3xl font-bold mb-6 text-center">
+          Register Your Society
         </h1>
 
-        {!submitted ? (
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              setSubmitted(true);
-            }}
-            className="bg-white p-8 rounded-3xl shadow-xl space-y-6"
-          >
-            <input
-              type="text"
-              placeholder="Society Name"
-              required
-              className="w-full p-3 border rounded-xl"
-            />
-
-            <input
-              type="text"
-              placeholder="City"
-              required
-              className="w-full p-3 border rounded-xl"
-            />
-
-            <input
-              type="text"
-              placeholder="Number of Units"
-              required
-              className="w-full p-3 border rounded-xl"
-            />
-
-            <input
-              type="text"
-              placeholder="Contact Person Name"
-              required
-              className="w-full p-3 border rounded-xl"
-            />
-
-            <input
-              type="email"
-              placeholder="Email Address"
-              required
-              className="w-full p-3 border rounded-xl"
-            />
-
-            <input
-              type="tel"
-              placeholder="Mobile Number"
-              required
-              className="w-full p-3 border rounded-xl"
-            />
-
-            <button
-              type="submit"
-              className="w-full bg-blue-600 text-white py-3 rounded-xl hover:bg-blue-700 transition"
-            >
-              Submit Enquiry
-            </button>
-          </form>
-        ) : (
-          <div className="text-center bg-green-100 p-8 rounded-2xl">
-            <h2 className="text-2xl font-bold text-green-700">
-              Thank you! We will contact you soon.
-            </h2>
+        {submitted && (
+          <div className="mb-6 p-4 bg-green-100 text-green-700 rounded-lg text-center">
+            Thank you! Our team will contact you shortly.
           </div>
         )}
 
+        <form onSubmit={handleSubmit} className="space-y-5">
+
+          <input
+            name="societyName"
+            placeholder="Society Name"
+            required
+            className="w-full border px-4 py-3 rounded-xl"
+          />
+
+          <input
+            name="name"
+            placeholder="Contact Person Name"
+            required
+            className="w-full border px-4 py-3 rounded-xl"
+          />
+
+          <input
+            name="phone"
+            placeholder="Phone Number"
+            required
+            className="w-full border px-4 py-3 rounded-xl"
+          />
+
+          <input
+            name="city"
+            placeholder="City"
+            required
+            className="w-full border px-4 py-3 rounded-xl"
+          />
+
+          <button
+            type="submit"
+            disabled={loading}
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-semibold transition"
+          >
+            {loading ? "Submitting..." : "Submit Enquiry"}
+          </button>
+
+        </form>
       </div>
-    </main>
+    </section>
   );
 }
