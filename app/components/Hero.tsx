@@ -36,7 +36,7 @@ export default function Hero() {
 
           <div className="flex gap-4">
             <a
-              href="/contact"
+              href="/enquiry"
               className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-2xl shadow-lg transition duration-300"
             >
               Register Your Society
