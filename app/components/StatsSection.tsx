@@ -11,8 +11,8 @@ const stats = [
 
 export default function StatsSection() {
   return (
-    <section className="py-20 bg-white border-y border-gray-100">
-      <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    <section className="py-24 bg-gradient-to-b from-white to-blue-50 border-y border-gray-100">
+      <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
 
         {stats.map((stat, index) => (
           <motion.div
@@ -21,11 +21,15 @@ export default function StatsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
             viewport={{ once: true }}
+            className="glass-card p-8 text-center transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
           >
-            <h3 className="text-4xl font-bold text-blue-600 mb-2">
+            <h3 className="text-4xl font-bold text-blue-600 mb-3">
               {stat.number}
             </h3>
-            <p className="text-gray-600">{stat.label}</p>
+
+            <p className="text-gray-600 font-medium">
+              {stat.label}
+            </p>
           </motion.div>
         ))}
 
