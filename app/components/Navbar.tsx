@@ -1,15 +1,27 @@
 export default function Navbar() {
   return (
-    <header className="fixed w-full bg-white/70 backdrop-blur-md shadow-sm z-50">
+    <header className="fixed w-full bg-white/80 backdrop-blur-md shadow-sm z-50">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <h1 className="text-xl font-bold text-blue-600">
           Tokko Society
         </h1>
 
         <nav className="hidden md:flex gap-8 text-gray-700 font-medium">
-          <a href="#features" className="hover:text-blue-600 transition">Features</a>
-          <a href="#security" className="hover:text-blue-600 transition">Security</a>
-          <a href="#contact" className="hover:text-blue-600 transition">Contact</a>
+          <a href="/" className="hover:text-blue-600 transition">
+            Home
+          </a>
+          <a href="/about" className="hover:text-blue-600 transition">
+            About
+          </a>
+          <a href="/privacy-policy" className="hover:text-blue-600 transition">
+            Privacy
+          </a>
+          <a
+            href="/terms-and-conditions"
+            className="hover:text-blue-600 transition"
+          >
+            Terms
+          </a>
         </nav>
 
         <a

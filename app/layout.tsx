@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/Navbar"; // 👈 Add this
+import Navbar from "./components/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,8 +14,29 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tokko Society",
-  description: "Smart Society Visitor & Management System",
+  title: {
+    default: "Tokko Society",
+    template: "%s | Tokko Society",
+  },
+  description:
+    "Tokko Society is a smart digital platform for visitor management, maintenance tracking, billing, and society administration.",
+  keywords: [
+    "Society Management System",
+    "Visitor Management App",
+    "Apartment Management Software",
+    "Housing Society App India",
+    "Tokko Society",
+  ],
+  openGraph: {
+    title: "Tokko Society",
+    description:
+      "Smart Digital Society Management Platform for modern housing communities.",
+    url: "https://www.tokkosociety.com",
+    siteName: "Tokko Society",
+    locale: "en_IN",
+    type: "website",
+  },
+  metadataBase: new URL("https://www.tokkosociety.com"),
 };
 
 export default function RootLayout({
@@ -26,9 +47,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white`}
       >
-        <Navbar />   {/* 👈 Navbar Added */}
+        <Navbar />
         {children}
       </body>
     </html>
