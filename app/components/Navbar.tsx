@@ -22,6 +22,10 @@ export default function Navbar() {
           >
             Terms
           </a>
+
+          <a href="/contact" className="hover:text-blue-600 transition">
+            Contact
+          </a>
         </nav>
 
         <a
