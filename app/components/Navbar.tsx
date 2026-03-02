@@ -1,11 +1,33 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
+  const pathname = usePathname();
+
+  const navLink = (href: string, label: string) => {
+    const isActive = pathname === href;
+
+    return (
+      <Link
+        href={href}
+        className={`transition pb-1 ${
+          isActive
+            ? "text-blue-600 border-b-2 border-blue-600"
+            : "text-gray-700 hover:text-blue-600"
+        }`}
+      >
+        {label}
+      </Link>
+    );
+  };
+
   return (
     <header className="fixed w-full bg-white/80 backdrop-blur-md shadow-sm z-50">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         
-        {/* Logo → Always Goes Home */}
+        {/* Logo */}
         <Link
           href="/"
           className="text-xl font-bold text-blue-600 hover:opacity-80 transition"
@@ -14,32 +36,15 @@ export default function Navbar() {
         </Link>
 
         {/* Navigation */}
-        <nav className="hidden md:flex gap-8 text-gray-700 font-medium">
-          <Link href="/" className="hover:text-blue-600 transition">
-            Home
-          </Link>
-
-          <Link href="/about" className="hover:text-blue-600 transition">
-            About
-          </Link>
-
-          <Link href="/privacy-policy" className="hover:text-blue-600 transition">
-            Privacy
-          </Link>
-
-          <Link
-            href="/terms-and-conditions"
-            className="hover:text-blue-600 transition"
-          >
-            Terms
-          </Link>
-
-          <Link href="/contact" className="hover:text-blue-600 transition">
-            Contact
-          </Link>
+        <nav className="hidden md:flex gap-8 font-medium">
+          {navLink("/", "Home")}
+          {navLink("/about", "About")}
+          {navLink("/privacy-policy", "Privacy")}
+          {navLink("/terms-and-conditions", "Terms")}
+          {navLink("/contact", "Contact")}
         </nav>
 
-        {/* Admin Login Button */}
+        {/* Admin Login */}
         <a
           href="https://admin.tokkosociety.com"
           target="_blank"
@@ -48,7 +53,6 @@ export default function Navbar() {
         >
           Admin Login
         </a>
-
       </div>
     </header>
   );
