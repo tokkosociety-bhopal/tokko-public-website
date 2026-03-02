@@ -31,7 +31,7 @@ export default function Contact() {
               <div>
                 <h3 className="text-xl font-semibold mb-2">Email</h3>
                 <p className="text-gray-600">
-                  support@tokkosociety.com
+                  help.tokkosociety@gmail.com
                 </p>
               </div>
 

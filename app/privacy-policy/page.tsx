@@ -97,7 +97,7 @@ export default function PrivacyPolicy() {
         8. Contact Us
       </h2>
       <p>
-        Email: support@tokkosociety.com
+        Email: help.tokkosociety@gmail.com
       </p>
     </main>
   );
