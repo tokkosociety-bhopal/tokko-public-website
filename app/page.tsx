@@ -7,12 +7,14 @@ import Security from "./components/Security";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
 import DetailedFeatures from "./components/DetailedFeatures";
+import ProblemSolution from "./components/ProblemSolution";
 
 export default function Home() {
   return (
     <main className="bg-white text-gray-800">
       <Hero />
 <Stats />
+<ProblemSolution />
 <DetailedFeatures />
 <Features />
 <Security />
