@@ -51,11 +51,13 @@ export default function ProblemSolution() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <div className="order-2 md:order-1 bg-white rounded-3xl shadow-xl p-8 border border-gray-100">
-            <div className="h-64 bg-green-100 rounded-2xl flex items-center justify-center text-green-600 font-semibold">
-              Digital Dashboard Illustration
-            </div>
-          </div>
+          <div className="order-2 md:order-1 bg-white rounded-3xl shadow-2xl p-4 border border-gray-100 overflow-hidden">
+  <img
+    src="/digital-dashboard.png"
+    alt="Digital Society Dashboard"
+    className="rounded-2xl w-full h-80 object-cover"
+  />
+</div>
 
           <div className="order-1 md:order-2">
             <h2 className="text-4xl font-bold mb-6 text-green-600">
