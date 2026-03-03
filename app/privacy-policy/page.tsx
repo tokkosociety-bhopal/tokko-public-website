@@ -183,7 +183,7 @@ export default function PrivacyPolicy() {
         </h2>
 
         <p className="mb-8">
-          Tokko Society is not intended for children under the age of 13.
+          Tokko Society is not intended for children under the age of 18.
           We do not knowingly collect personal information from children.
         </p>
 
