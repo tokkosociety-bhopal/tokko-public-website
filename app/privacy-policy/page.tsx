@@ -12,8 +12,10 @@ export default function PrivacyPolicy() {
         </p>
 
         <p className="mb-6">
-          Tokko Society ("we", "our", "us") operates a digital visitor and residential society management platform. 
-          This Privacy Policy explains how we collect, use, store, protect, and share information when you use our mobile application or website (collectively referred to as the "Platform").
+          Tokko Society ("we", "our", "us") operates a digital visitor and residential society
+          management platform. This Privacy Policy explains how we collect, use, store,
+          protect, and share information when you use our mobile application or website
+          (collectively referred to as the "Platform").
         </p>
 
         <p className="mb-10">
@@ -215,10 +217,30 @@ export default function PrivacyPolicy() {
           11. Contact Information
         </h2>
 
-        <p>
-          Email: help.tokkosociety@gmail.com<br />
-          Phone: +91 9009585458<br />
+        <p className="mb-8">
+          Email: help.tokkosociety@gmail.com <br />
+          Phone: +91 9009585458 <br />
           Phone: +91 9516135516
+        </p>
+
+        <h2 className="text-2xl font-semibold mt-10 mb-4">
+          12. Company Information
+        </h2>
+
+        <p>
+          Tokko Society application is developed and maintained by <strong>Pedicive Hygiene Care</strong>,
+          located in <strong>Bhopal, India</strong>.
+        </p>
+
+        <p className="mt-4">
+          If you have any questions, concerns, or requests regarding this Privacy Policy or the Tokko
+          Society application, please contact us at:
+        </p>
+
+        <p className="mt-4">
+          <strong>Company Name:</strong> Pedicive Hygiene Care <br />
+          <strong>Location:</strong> Bhopal, India <br />
+          <strong>Email:</strong> help.tokkosociety@gmail.com
         </p>
 
       </section>
